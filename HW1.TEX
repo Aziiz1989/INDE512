@@ -1,0 +1,156 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[a4paper, total={7.5in, 10.5in}]{geometry}
+\usepackage{amscd}
+\usepackage[tableposition=top]{caption}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage[lastexercise]{exercise}
+%\usepackage{amsfonts,amsthm,mathtools}
+\usepackage[fleqn]{amsmath}
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings}
+\usepackage{color}
+\usepackage[font=footnotesize ,labelfont=bf]{caption}
+\usepackage{multirow}
+%\usepackage{slashbox}
+\usepackage{diagbox}
+\usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{float}
+\usepackage{array}
+\usepackage{subfigure}
+\usepackage{longtable, ltablex, tabu}
+\renewcommand{\ExerciseHeader}{%
+  \par\noindent
+  \textbf{\large \ExerciseName\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}%
+  \par\nopagebreak\medskip
+}
+
+
+\begin{document}
+\title{IND E 521: Homework 1}
+\author{Abdulaziz Aldawood}
+\maketitle
+\begin{Exercise}[name = {Problem}] %Q1
+\Question{
+ Sample average = \(\frac{\sum_{i=1}^{n} x_i}{n} \) = 50.002 \\
+ }
+ \Question{
+ Sample Standard Deviation = \(\sqrt[]{\frac{\sum_{i=1}^{n}(x_i - \bar{x})}{n-1}}\) = 0.003
+}
+\end{Exercise}
+
+\begin{Exercise}[name = {Problem}] %Q2
+\Question{
+Since \(P(x < 32) \le 0.5 \) this indicates that 32 is less than the mean which means Z is negative \\
+Therefore, \(P(x \le 32) = \Phi(-Z) = 1 - \Phi(Z) = 0.0228 \Rightarrow \Phi(Z) = 0.9972 \) \\
+From Z table, -Z = \(\frac{32 - \mu}{4} = -2.77 \Rightarrow \mu = 43.08 \)
+
+}
+\end{Exercise}
+
+\begin{Exercise}[name = {Problem}] %Q3
+\Question{
+\(P(x > 1000) = 1 - P(x \leq 1000) \) = 1 - 0.9978 = 0.0021\\ 
+\(P(x \leq 1000) = \Phi(\frac{1000 - 900}{35}) = \Phi(2.86) = 0.9979\)
+}
+\end{Exercise}
+
+\begin{Exercise}[name = {Problem}]%Q4
+\Question{
+The probability that 10 patients will have high blood pressure = b(10;50,0.15)\\ 
+b(10;50,0.15) = \(\frac{50!}{10!40!}0.15^{10}(0.85)^{40} = 0.089 = 8.9\% \)
+}
+\end{Exercise}
+
+\begin{Exercise}[name = {Problem}] %Q5
+\textcolor{red}{Review}
+\Question{
+The probability that at least 1 defect in one unit = \(P(defects \geq 1) \)\\ 
+c = 0.1\\
+\(P(defects \geq 1)\) = 1 - \(P(defects = 0)\) = 1 - \(\frac{0.1^0 exp(-0.1)}{0!} = 1 - 0.905 = 0.095 \)
+
+}
+\end{Exercise}
+
+\begin{Exercise}[name = {Problem}] %Q6
+\Question{
+\begin{flalign*}
+H_0: \mu = 125 psi & \qquad \bar{x} = 127 psi &\\
+H_1: \mu > 125 psi & \qquad n = 8 &\\ 
+\sigma = 2 psi & \qquad Z_0 = \frac{\bar{x} - \mu}{\sigma / \sqrt[]{n}} = \frac{127 - 125}{2 / \sqrt[]{8}} = 2.83&\\
+Z_\alpha = 1.645 & \qquad  \textit{therefore, we reject the null hypothesis}&\\
+\end{flalign*}
+\
+}
+
+
+\Question{
+P-value = 1 - \( \Phi(2.83) \) = 1 - 0.9961 = 0.0039
+}
+
+\Question{
+lower CI = \( 127 - 1.645 * \frac{2}{\sqrt[]{8}} =125.84 \) 
+}
+\end{Exercise}
+
+
+
+\begin{Exercise}[name = {Problem}] %Q7
+\Question{
+\begin{align*}
+H_0: \mu = 12 V & \qquad \bar{x} = 10.26 V &\\
+H_1: \mu \neq 12 V & \qquad n = 16 &\\
+s = \sqrt[]{\frac{\sum_{i=1}^{16} x_{i}^{2} - \frac{(\sum_{i=1}^{16} x_i)^2 }{16}}{15}} = 0.999 & \qquad t_0 = \frac{\bar{x} - \mu_0}{s / \sqrt[]{n}} = \frac{10.26 - 12}{0.999 / \sqrt[]{16}} = -6.97 &\\
+t_{0.025, 15} = 2.131 & \qquad  \textit{therefore, we reject the null hypothesis} &\\
+\end{align*}
+}
+
+\Question{
+\begin{multline}
+    10.26 - 2.131*\frac{0.999}{\sqrt{16}} \leq \mu \leq 10.26 + 2.131 * \frac{0.99}{\sqrt{16}}  \\ 
+    9.73 \leq \mu \leq 10.79 \\ 
+\end{multline}
+}
+
+\Question{
+    
+    
+}
+\end{Exercise}
+
+
+
+\begin{Exercise}[name = {Problem}]%Q8
+
+\end{Exercise}
+
+
+
+\begin{Exercise}[name = {Problem}]%Q9
+
+\end{Exercise}
+
+
+
+\begin{Exercise}[name = {Problem}]%Q10
+
+\end{Exercise}
+
+
+
+\begin{Exercise}[name = {Problem}]%Q11
+
+\end{Exercise}
+
+
+
+\begin{Exercise}[name = {Problem}]%Q12
+
+\end{Exercise}
+
+
+
+
+\end{document}
