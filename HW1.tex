@@ -14,6 +14,7 @@
 \usepackage[font=footnotesize ,labelfont=bf]{caption}
 \usepackage{multirow}
 %\usepackage{slashbox}
+\usepackage{stackengine}
 \usepackage{diagbox}
 \usepackage{booktabs}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
@@ -65,7 +66,6 @@ b(10;50,0.15) = \(\frac{50!}{10!40!}0.15^{10}(0.85)^{40} = 0.089 = 8.9\% \)
 \end{Exercise}
 
 \begin{Exercise}[name = {Problem}] %Q5
-\textcolor{red}{Review}
 \Question{
 The probability that at least 1 defect in one unit = \(P(defects \geq 1) \)\\ 
 c = 0.1\\
@@ -80,7 +80,7 @@ c = 0.1\\
 H_0: \mu = 125 psi & \qquad \bar{x} = 127 psi &\\
 H_1: \mu > 125 psi & \qquad n = 8 &\\ 
 \sigma = 2 psi & \qquad Z_0 = \frac{\bar{x} - \mu}{\sigma / \sqrt[]{n}} = \frac{127 - 125}{2 / \sqrt[]{8}} = 2.83&\\
-Z_\alpha = 1.645 & \qquad  \textit{therefore, we reject the null hypothesis}&\\
+Z_\alpha = 1.645 & \qquad Z_0 > Z_\alpha \textit{ ,therefore, we reject the null hypothesis}&\\
 \end{flalign*}
 \
 }
@@ -103,24 +103,41 @@ lower CI = \( 127 - 1.645 * \frac{2}{\sqrt[]{8}} =125.84 \)
 H_0: \mu = 12 V & \qquad \bar{x} = 10.26 V &\\
 H_1: \mu \neq 12 V & \qquad n = 16 &\\
 s = \sqrt[]{\frac{\sum_{i=1}^{16} x_{i}^{2} - \frac{(\sum_{i=1}^{16} x_i)^2 }{16}}{15}} = 0.999 & \qquad t_0 = \frac{\bar{x} - \mu_0}{s / \sqrt[]{n}} = \frac{10.26 - 12}{0.999 / \sqrt[]{16}} = -6.97 &\\
-t_{0.025, 15} = 2.131 & \qquad  \textit{therefore, we reject the null hypothesis} &\\
+t_{0.025, 15} = 2.131 & \qquad |t_0| > t_{0.025, 15} \textit{ ,therefore, we reject the null hypothesis} &\\
 \end{align*}
 }
 
 \Question{
 \begin{align*}
-    10.26 - 2.131*\frac{0.999}{\sqrt{16}} &\leq \mu \leq 10.26 + 2.131 * \frac{0.99}{\sqrt{16}}  \\ 
+    10.26 - 2.131(\frac{0.999}{\sqrt{16}}) &\leq \mu \leq 10.26 + 2.131 ( \frac{0.99}{\sqrt{16})}  \\ 
     9.73 &\leq \mu \leq 10.79 \\ 
 \end{align*}
 }
 
 \Question{
-    
+
+
+\begin{align*}
+    H_0: \sigma^2 = 11 & & \\
+    H_1: \sigma^2 \neq 11 && \\
+    \chi_{0}^{2} = \frac{(n-1)*s^2}{\sigma_{0}^{2}} & \chi_{0}^{2} = \frac{15*0.999^2}{11} = 1.36 & \\
+    \textit{Since } \chi_{0}^{2} \le \chi_{0.975, 15}^{2} = 6.27 & \qquad \textit{therefore, we reject the null hypothesis} &\\
+\end{align*}
     
 }
 
 \Question{
-    
+    \begin{align*}
+    \frac{(15)(0.999)^2}{27.49} &\leq \sigma^2 \leq  \frac{(15)(0.999)^2}{6.27} \\ 
+    0.545 &\leq \sigma^2  \leq 2.388 \\ 
+\end{align*}
+}
+
+\Question{
+    \begin{align*}
+    & \sigma^2 \leq  \frac{(15)(0.999)^2}{7.26} \\ 
+    & \sigma^2  \leq 2.062 \\ 
+\end{align*}
     
 }
 \end{Exercise}
@@ -128,30 +145,143 @@ t_{0.025, 15} = 2.131 & \qquad  \textit{therefore, we reject the null hypothesis
 
 
 \begin{Exercise}[name = {Problem}]%Q8
+\Question{
+    \begin{align*}
+    H_0: P = 0.08 && \\ 
+    H_1: P \neq 0.08 &&\\ 
+    nP_0 = (500)(0.08) = 40 & x = 65& \\ 
+    Since x > nP_0, & Z_0 = \frac{(65-0.5)-40}{\sqrt{40(0.92)}} = 4.039 &\\ 
+    |Z_0| > Z_{0.025} & \qquad \textit{Therefore, we reject the null hypothesis} & \\ 
+    \end{align*} 
+}
+
+\Question{
+     \begin{align*}
+        \textit{p-value } &= 1 - \Phi(4.039) & \\ 
+        &= 1-1 = 0 & \\ 
+     \end{align*}
+}
+
+\Question{
+    \begin{align*}
+    P &\leq \frac{65}{500} + Z_{0.025} \sqrt{\frac{\frac{65}{500}(1-\frac{65}{500})}{500}}) & \\
+    P &\leq 0.1595 &\\ 
+    \end{align*}
+}
 
 \end{Exercise}
 
 
 
 \begin{Exercise}[name = {Problem}]%Q9
-
+\Question{
+\begin{align*}
+\delta &= 20-15 = 5 &\\ 
+\beta &= \Phi(Z_0.025 - \frac{5\sqrt{n}}{3}) - \Phi(-Z_0.025 - \frac{5\sqrt{n}}{3}) & \\ 
+\end{align*}
+From the OC curve and substituting different values for n in the equation above, the sample size required for type II error not to exceed 0.1 is 4 or greater
+}
 \end{Exercise}
 
 
 
 \begin{Exercise}[name = {Problem}]%Q10
+\Question{
+    \begin{align*}
+        \textit{for m=5: }& \binom{5}{1} 0.0027^1(1-0.0027)^4 = 0.0134 & \\
+        \textit{for m=10: }& \binom{10}{1} 0.0027^1(1-0.0027)^9 = 0.0264 & \\
+        \textit{for m=20: }& \binom{20}{1} 0.0027^1(1-0.0027)^19 = 0.0513 & \\
+        \textit{for m=30: }& \binom{30}{1} 0.0027^1(1-0.0027)^29 =0.0749 & \\
+        \textit{for m=50: }& \binom{50}{1} 0.0027^1(1-0.0027)^49 =0.1182 & \\
+    \end{align*}
+}
 
 \end{Exercise}
 
 
 
 \begin{Exercise}[name = {Problem}]%Q11
+\Question{
+    \begin{align*}
+         \alpha &= 2(1-\Phi(3)) = 0.0027 &\\ 
+         ARL_0 &= \frac{1}{0.0027} = 370 & \\
+    \end{align*}
+}
+
+\Question{
+    \begin{align*}
+        \textit(For ) ARL_0 &\geq 400 &\\ 
+        \frac{1}{\alpha} &\geq 400 & \\ 
+        \alpha &\leq 0.0025&\\ 
+         0.0025 &\leq 2(1-\Phi(L)) &\\ 
+         0.00125 &\leq 1-\Phi(L) & \\ 
+         \Phi(L) &\leq 0.99875 &\\
+         \frac{\Phi(2.99) + \Phi(3.05)}{2} &= 0.99875 &\\ 
+         L &= 3.02 &\\ 
+    \end{align*}
+}
+
+
+\Question{
+    \begin{align*}
+         \beta &= \Phi(1.5) - \Phi(-4.5) &\\ 
+         \beta &= 0.93319 & \\ 
+         ARL_{1-\beta} &= \frac{1}{1-\beta} = 15 &\\
+    \end{align*}
+}
 
 \end{Exercise}
 
 
 
 \begin{Exercise}[name = {Problem}]%Q12
+\Question{
+    \begin{align*}
+         \alpha_1 &= P(\textit{1st and/or second sample exceed upper or lower limits})&\\
+                  &= P(\textit{1st sample exceed upper or lower limits})&\\ 
+                  &\quad + P(\textit{2nd sample exceed upper or lower limits})&\\ 
+                  &\quad -P(\textit{both samples exceed upper or lower limits}) & \\ 
+                  &= (0.0027) + (0.0027) - (0.0027)^2 & \\ 
+                  &= 0.0054 & \\ 
+    \end{align*}
+}
+
+\Question{
+    \begin{align*}
+         \alpha_2 &= P(\textit{samples falling on different sides of the center line})&\\
+                  &= (0.5)(0.5)(2)&\\ 
+                  &= 0.5 &\\ 
+    \end{align*}
+} 
+\Question{
+    \begin{align*}
+         \alpha &= 1-\prod_{i=1}^{k} (1-\alpha_i) &\\
+                &= 1-(1-0.0054)(1-0.5)& \\ 
+                &= 0.5027 &\\ 
+    \end{align*}
+}
+
+\Question{
+    \begin{align*}
+         \beta_1 &= P(one of the samples exceed the upper or lower limit | OCC) &\\ 
+                 &= (\Phi(3-2) - \Phi(-3-2))^2&\\ 
+                 &= (\Phi(1) - \Phi(-5))^2&\\ 
+                 &= (0.84134)^2 & \\
+                 &= 0.708 &\\ 
+    \end{align*}
+}
+
+\Question{
+    \begin{align*}
+         \beta_2 &= P(\textit{samples falling on different sides of the center line } | \textit{ OCC}) &\\ 
+                 &= 2 (P(\textit{1st sample falls between } \mu_0 \textit{ and } \mu_1, \textit{ 2nd sample falls left of } \mu_0)) &\\ 
+                 &= 2(0.5 (\Phi(\frac{(\mu_0 - \mu_1)\sqrt{n}}{\sigma})) &\\ 
+                 &= \phi(-2) &\\ 
+                 &= 0.02275 & \\
+    \end{align*}
+} 
+
+
 
 \end{Exercise}
 
